@@ -1,7 +1,7 @@
-## Make Your App Material
+# Make Your App Material
 ===================================
 
-# XYZ Reader: A mock RSS feed reader featuring banner photos and headlines. 
+## XYZ Reader: A mock RSS feed reader featuring banner photos and headlines. 
 
 Your job will be to take the user feedback in the UI Review node, and implement changes that will improve the UI and make it conform to Material Design.
 
@@ -14,7 +14,7 @@ Required Tasks:
 Execute the improvements!
 
 
-# User Feedback for XYZ Reader:
+## User Feedback for XYZ Reader:
 
 Lyla says:
 “This app is starting to shape up but it feels a bit off in quite a few places. I can't put finger on it but it feels odd.”
@@ -25,7 +25,7 @@ Jay says:
 Kagure says:
 “The color scheme is really sad and I shouldn't feel sad.”
 
-# Make Your App Material
+## Make Your App Material
 
 * App uses the Design Support library and its provided widget types (FloatingActionButton, AppBarLayout, SnackBar, etc).
 
