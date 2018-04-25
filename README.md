@@ -17,13 +17,13 @@ Execute the improvements!
 ## User Feedback for XYZ Reader:
 
 
-__Lyla says:
+__Lyla says:__
 “This app is starting to shape up but it feels a bit off in quite a few places. I can't put finger on it but it feels odd.”
 
-__Jay says:
+__Jay says:__
 “Is the text supposed to be so wonky and unreadable? It is not accessible to those of us without perfect vision."
 
-__Kagure says:
+__Kagure says:__
 “The color scheme is really sad and I shouldn't feel sad.”
 
 ## Make Your App Material
