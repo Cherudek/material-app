@@ -17,23 +17,21 @@
 
 <resources>
 
-    <style name="Theme.Bacon" parent="android:Theme.Material.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
 
     </style>
 
-    <style name="Theme.Bacon.Detail">
-        <item name="android:statusBarColor">@android:color/transparent</item>
-    </style>
+
 
     <style name="ListItemArticleTitle">
         <item name="android:textColor">@color/primaryTextColor</item>
-        <item name="android:fontFamily">@font/RobotoRegular</item>
+        <item name="android:font">@font/roboto_regular</item>
 
     </style>
 
     <style name="ListItemArticleSubTitle">
         <item name="android:textColor">@color/primaryTextColor</item>
-        <item name="android:fontFamily">@font/RobotoThin</item>
+        <item name="android:font">@font/roboto_thin</item>
 
     </style>
 

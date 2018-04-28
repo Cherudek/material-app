@@ -3,11 +3,11 @@
   <font
     android:fontStyle="normal"
     android:fontWeight="400"
-    android:font="@font/RobotoRegular"/>
+    android:font="@font/roboto_regular"/>
 
     <font
     android:fontStyle="normal"
     android:fontWeight="400"
-    android:font="@font/RobotoThin"/>
+    android:font="@font/roboto_thin"/>
 
 </font-family>
