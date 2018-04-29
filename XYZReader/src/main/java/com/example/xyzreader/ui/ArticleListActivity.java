@@ -1,5 +1,7 @@
 package com.example.xyzreader.ui;
 
+import static android.support.v4.view.ViewCompat.setTransitionName;
+
 import android.app.Activity;
 import android.app.LoaderManager;
 import android.content.BroadcastReceiver;
@@ -152,11 +154,14 @@ public class ArticleListActivity extends AppCompatActivity implements
                 @Override
                 public void onClick(View view) {
 
-                  //Adding a Shared Element Transitions to the Intent
+
+                    //Adding a Shared Element Transitions to the Intent
+                    View transitionView = view.findViewById(R.id.thumbnail);
+
                   ActivityOptionsCompat options = ActivityOptionsCompat.
                       makeSceneTransitionAnimation(ArticleListActivity.this,
-                          view,
-                          ViewCompat.getTransitionName(view));
+                          transitionView,
+                          ViewCompat.getTransitionName(transitionView));
 
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))), options.toBundle());
