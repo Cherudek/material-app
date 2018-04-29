@@ -68,8 +68,6 @@ public class ArticleDetailFragment extends Fragment implements
     private SimpleDateFormat outputFormat = new SimpleDateFormat();
     // Most time functions can only handle 1902 - 2037
     private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2,1,1);
-    
-    private static ArticleDetailFragment fragment;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -81,7 +79,7 @@ public class ArticleDetailFragment extends Fragment implements
     public static ArticleDetailFragment newInstance(long itemId) {
         Bundle arguments = new Bundle();
         arguments.putLong(ARG_ITEM_ID, itemId);
-        fragment = new ArticleDetailFragment();
+        ArticleDetailFragment fragment = new ArticleDetailFragment();
         fragment.setArguments(arguments);
         
         return fragment;
@@ -160,14 +158,14 @@ public class ArticleDetailFragment extends Fragment implements
         return mRootView;
     }
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-
-        fragment.addSharedElement(mPhotoView, ViewCompat.getTransitionName(mPhotoView));
-
-    }
+//    @Override
+//    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+//        super.onViewCreated(view, savedInstanceState);
+//
+//
+//        fragment.addSharedElement(mPhotoView, ViewCompat.getTransitionName(mPhotoView));
+//
+//    }
 
 //    private void addSharedElement(ImageView mPhotoView, String transitionName) {
 //    }
