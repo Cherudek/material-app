@@ -20,7 +20,8 @@
             android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/photo_placeholder" />
+            android:background="@color/photo_placeholder"
+            android:transitionName="simple_activity_transition_rv"/>
 
         <TextView
             android:fontFamily="@font/roboto_mono_regular"
