@@ -27,13 +27,9 @@
             android:name=".ui.ArticleDetailActivity"
             android:parentActivityName=".ui.ArticleListActivity">
             <intent-filter>
-                <data android:host="example.com" />
-                <data android:scheme="https" />
-                <data android:pathPattern="/.*" />
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:mimeType="vnd.android.cursor.item/vnd.com.example.xyzreader.items" />
             </intent-filter>
             <meta-data
