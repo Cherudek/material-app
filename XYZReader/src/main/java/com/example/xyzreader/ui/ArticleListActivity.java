@@ -149,6 +149,8 @@ public class ArticleListActivity extends AppCompatActivity implements
             View view = getLayoutInflater().inflate(R.layout.list_item_article, parent, false);
             final ViewHolder vh = new ViewHolder(view);
 
+
+
             //OnClick Listener to Fire The Detail Activity
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -156,12 +158,12 @@ public class ArticleListActivity extends AppCompatActivity implements
 
 
                     //Adding a Shared Element Transitions to the Intent
-                    View transitionView = view.findViewById(R.id.thumbnail);
+                  //  View transitionView = view.findViewById(R.id.thumbnail);
 
                   ActivityOptionsCompat options = ActivityOptionsCompat.
                       makeSceneTransitionAnimation(ArticleListActivity.this,
-                          transitionView,
-                          ViewCompat.getTransitionName(transitionView));
+                          vh.thumbnailView,
+                          ViewCompat.getTransitionName(vh.thumbnailView));
 
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))), options.toBundle());

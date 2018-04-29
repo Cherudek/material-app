@@ -158,17 +158,6 @@ public class ArticleDetailFragment extends Fragment implements
         return mRootView;
     }
 
-//    @Override
-//    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//
-//
-//        fragment.addSharedElement(mPhotoView, ViewCompat.getTransitionName(mPhotoView));
-//
-//    }
-
-//    private void addSharedElement(ImageView mPhotoView, String transitionName) {
-//    }
 
     private void updateStatusBar() {
         int color = 0;
