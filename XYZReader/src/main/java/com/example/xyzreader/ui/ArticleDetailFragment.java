@@ -10,15 +10,9 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
-
-import android.support.annotation.Nullable;
-import android.support.v4.view.ViewCompat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.graphics.Palette;
 import android.text.Html;
@@ -30,11 +24,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * A fragment representing a single Article detail screen. This fragment is
@@ -150,6 +147,10 @@ public class ArticleDetailFragment extends Fragment implements
                         .setType("text/plain")
                         .setText("Some sample text")
                         .getIntent(), getString(R.string.action_share)));
+
+              //SnackBar to confirm the message has been sent!
+              Snackbar.make(view, "Message Sent", Snackbar.LENGTH_LONG)
+                  .setAction("Action", null).show();
             }
         });
 
@@ -158,6 +159,20 @@ public class ArticleDetailFragment extends Fragment implements
         return mRootView;
     }
 
+  @Override
+  public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    super.onViewCreated(view, savedInstanceState);
+
+    Intent intent = getActivityCast().getIntent();
+
+    intent.getAction();
+
+    String fragmentTag = ArticleDetailFragment.TAG;
+
+    Fragment fragment = getFragmentManager().findFragmentByTag(fragmentTag);
+
+
+  }
 
     private void updateStatusBar() {
         int color = 0;
