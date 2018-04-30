@@ -1,8 +1,5 @@
 package com.example.xyzreader.ui;
 
-import static android.support.v4.view.ViewCompat.setTransitionName;
-
-import android.app.Activity;
 import android.app.LoaderManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -21,17 +18,13 @@ import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.util.Log;
-import android.util.TypedValue;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
 import com.example.xyzreader.data.UpdaterService;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -64,8 +57,7 @@ public class ArticleListActivity extends AppCompatActivity implements
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
-
-        final View toolbarContainerView = findViewById(R.id.toolbar_container);
+        // final View toolbarContainerView = findViewById(R.id.toolbar_container);
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
 
@@ -158,12 +150,12 @@ public class ArticleListActivity extends AppCompatActivity implements
 
 
                     //Adding a Shared Element Transitions to the Intent
-                  //  View transitionView = view.findViewById(R.id.thumbnail);
+                    View transitionView = view.findViewById(R.id.thumbnail);
 
                   ActivityOptionsCompat options = ActivityOptionsCompat.
                       makeSceneTransitionAnimation(ArticleListActivity.this,
-                          vh.thumbnailView,
-                          ViewCompat.getTransitionName(vh.thumbnailView));
+                          transitionView,
+                          ViewCompat.getTransitionName(transitionView));
 
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))), options.toBundle());

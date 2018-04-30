@@ -23,7 +23,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.example.xyzreader.R;
@@ -49,7 +48,7 @@ public class ArticleDetailFragment extends Fragment implements
     private Cursor mCursor;
     private long mItemId;
     private View mRootView;
-    private int mMutedColor = 0xFF333333;
+  private int mMutedColor = R.color.primaryDarkColor;
     private ObservableScrollView mScrollView;
     private DrawInsetsFrameLayout mDrawInsetsFrameLayout;
     private ColorDrawable mStatusBarColorDrawable;
@@ -155,9 +154,6 @@ public class ArticleDetailFragment extends Fragment implements
 
               startActivityForResult(intent, REQUEST_CODE);
 
-//              //SnackBar to confirm the message has been sent!
-//              Snackbar.make(view, "Message Sent", Snackbar.LENGTH_LONG)
-//                  .setAction("Action", null).show();
             }
         });
 
@@ -175,8 +171,6 @@ public class ArticleDetailFragment extends Fragment implements
         + (data != null ? data.toString() : "empty intent"));
 
     if (requestCode == REQUEST_CODE) {
-
-      Toast.makeText(getActivityCast(), "", Toast.LENGTH_SHORT).cancel();
 
       //SnackBar to confirm the message has been sent!
       Snackbar.make(mRootView, "Message Shared", Snackbar.LENGTH_LONG)
@@ -256,6 +250,10 @@ public class ArticleDetailFragment extends Fragment implements
 
 
         bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Roboto_Mono/RobotoMono-Regular.ttf"));
+      titleView.setTypeface(Typeface
+          .createFromAsset(getResources().getAssets(), "Roboto_Mono/RobotoMono-Regular.ttf"));
+      bylineView.setTypeface(Typeface
+          .createFromAsset(getResources().getAssets(), "Roboto_Mono/RobotoMono-Regular.ttf"));
 
         if (mCursor != null) {
             mRootView.setAlpha(0);
@@ -289,10 +287,11 @@ public class ArticleDetailFragment extends Fragment implements
                             Bitmap bitmap = imageContainer.getBitmap();
                             if (bitmap != null) {
                                 Palette p = Palette.generate(bitmap, 12);
-                                mMutedColor = p.getDarkMutedColor(0xFF333333);
+                              //  mMutedColor = p.getDarkMutedColor(0xFF333333);
                                 mPhotoView.setImageBitmap(imageContainer.getBitmap());
                                 mRootView.findViewById(R.id.meta_bar)
-                                        .setBackgroundColor(mMutedColor);
+                                    .setBackgroundColor(
+                                        getResources().getColor(R.color.primaryDarkColor));
                                 updateStatusBar();
                             }
                         }

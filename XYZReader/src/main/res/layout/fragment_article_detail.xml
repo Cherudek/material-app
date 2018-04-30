@@ -1,8 +1,8 @@
 <com.example.xyzreader.ui.DrawInsetsFrameLayout
-  android:id="@+id/draw_insets_frame_layout"
-  android:layout_width="match_parent"
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/draw_insets_frame_layout"
+  android:layout_width="match_parent"
   android:layout_height="match_parent">
 
   <com.example.xyzreader.ui.ObservableScrollView
@@ -49,7 +49,6 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content">
 
-
           <LinearLayout
             android:id="@+id/meta_bar"
             android:layout_width="match_parent"
@@ -80,6 +79,7 @@
               style="?android:attr/textAppearanceSmall"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
+              android:layout_marginBottom="@dimen/margin_24"
               android:textColor="@color/secondaryTextColor"/>
           </LinearLayout>
 
@@ -87,9 +87,9 @@
             android:id="@+id/share_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-44dp"
+            android:layout_marginTop="@dimen/fab_margin_top"
             android:layout_marginEnd="@dimen/fab_margin_end"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_below="@+id/meta_bar"
             android:contentDescription="@string/action_share"
             android:elevation="@dimen/fab_elevation"
@@ -98,20 +98,21 @@
             app:fabSize="normal"/>
 
           <TextView
-            android:layout_below="@+id/meta_bar"
             android:id="@+id/article_body"
             style="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_24"
             android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
             android:layout_marginRight="@dimen/detail_inner_horiz_margin"
+            android:layout_below="@+id/meta_bar"
             android:paddingBottom="@dimen/detail_body_bottom_margin"
+            android:ellipsize="end"
             android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
+            android:maxLines="10"
             android:textColor="@color/primaryTextColor"
             android:textColorLink="@color/theme_accent"
-            android:textSize="@dimen/detail_body_text_size"
-            android:ellipsize="end"
-            android:maxLines="10"/>
+            android:textSize="@dimen/detail_body_text_size"/>
 
         </RelativeLayout>
 
