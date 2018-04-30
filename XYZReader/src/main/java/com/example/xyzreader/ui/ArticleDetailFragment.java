@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.example.xyzreader.R;
@@ -111,7 +112,8 @@ public class ArticleDetailFragment extends Fragment implements
         getLoaderManager().initLoader(0, null, this);
     }
 
-    @Override
+
+  @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
@@ -144,6 +146,8 @@ public class ArticleDetailFragment extends Fragment implements
             @Override
             public void onClick(View view) {
 
+              //Intent to Share our message
+
               Intent intent = new Intent();
               intent.setAction(Intent.ACTION_SEND);
               intent.setType("text/plain");
@@ -151,10 +155,9 @@ public class ArticleDetailFragment extends Fragment implements
 
               startActivityForResult(intent, REQUEST_CODE);
 
-
-              //SnackBar to confirm the message has been sent!
-              Snackbar.make(view, "Message Sent", Snackbar.LENGTH_LONG)
-                  .setAction("Action", null).show();
+//              //SnackBar to confirm the message has been sent!
+//              Snackbar.make(view, "Message Sent", Snackbar.LENGTH_LONG)
+//                  .setAction("Action", null).show();
             }
         });
 
@@ -162,6 +165,29 @@ public class ArticleDetailFragment extends Fragment implements
         updateStatusBar();
         return mRootView;
     }
+
+
+  @Override
+  public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+
+    Log.i("SS", "onActivityResult: " + requestCode + ", " + resultCode + ", "
+        + (data != null ? data.toString() : "empty intent"));
+
+    if (requestCode == REQUEST_CODE) {
+
+      Toast.makeText(getActivityCast(), "", Toast.LENGTH_SHORT).cancel();
+
+      //SnackBar to confirm the message has been sent!
+      Snackbar.make(mRootView, "Message Shared", Snackbar.LENGTH_LONG)
+          .setAction("Action", null).show();
+    } else {
+      //SnackBar to confirm the message has been sent!
+      Snackbar.make(mRootView, "Sorry Try Again Message Not Shared", Snackbar.LENGTH_LONG)
+          .setAction("Action", null).show();
+    }
+  }
+
 
   @Override
   public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
