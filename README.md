@@ -50,12 +50,12 @@ __Kagure says:__
 
 * App conforms to common standards found in the Android Nanodegree General Project Guidelines.
 
-## Android App Screen Shots
+## Android App Screen Shots:
 
 ---------------------------------
 
-![Material Design Main](https://github.com/Cherudek/material-app/blob/master/MakeYourAppMaterial2.png "Material Design Main Screenshot")
+![Material Design Main](https://github.com/Cherudek/MakeYourAppMaterial2.png "Material Design Main Screenshot")
 
-![Material Design Detail Activity](https://github.com/Cherudek/material-app/blob/master/MakeYourAppMaterial1.png "Material Design Detail Activity Screenshot")
+![Material Design Detail Activity](https://github.com/Cherudek/MakeYourAppMaterial1.png "Material Design Detail Activity Screenshot")
 
 
