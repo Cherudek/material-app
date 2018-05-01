@@ -49,3 +49,13 @@ __Kagure says:__
 * App uses fonts that are either the Android defaults, are complementary, and aren't otherwise distracting.
 
 * App conforms to common standards found in the Android Nanodegree General Project Guidelines.
+
+## Android App Screen Shots
+
+---------------------------------
+
+![Material Design Main](https://github.com/Cherudek/material-app/blob/master/MakeYourAppMaterial2.png "Material Design Main Screenshot")
+
+![Material Design Detail Activity](https://github.com/Cherudek/material-app/blob/master/MakeYourAppMaterial1.png "Material Design Detail Activity Screenshot")
+
+
