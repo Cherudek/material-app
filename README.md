@@ -54,8 +54,8 @@ __Kagure says:__
 
 ---------------------------------
 
-![Material Design Main](https://github.com/Cherudek/MakeYourAppMaterial2.png "Material Design Main Screenshot")
+![Material Design Main](https://github.com/Cherudek/material-app/MakeYourAppMaterial2.png "Material Design Main Screenshot")
 
-![Material Design Detail Activity](https://github.com/Cherudek/MakeYourAppMaterial1.png "Material Design Detail Activity Screenshot")
+![Material Design Detail Activity](https://github.com/Cherudek/material-app/MakeYourAppMaterial1.png "Material Design Detail Activity Screenshot")
 
 
