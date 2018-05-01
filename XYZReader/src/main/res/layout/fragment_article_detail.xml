@@ -59,6 +59,7 @@
             android:paddingLeft="@dimen/detail_inner_horiz_margin"
             android:paddingRight="@dimen/detail_inner_horiz_margin"
             android:background="#333"
+            android:elevation="@dimen/elevation_2dp"
             android:orientation="vertical">
 
             <TextView
@@ -91,9 +92,10 @@
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/meta_bar"
             android:contentDescription="@string/action_share"
-            android:elevation="@dimen/fab_elevation"
+            android:elevation="@dimen/fab_pressed_elevation"
             android:src="@drawable/ic_share"
-            android:stateListAnimator="@anim/fab_state_list_anim"
+            android:stateListAnimator="@animator/fab_state_list_anim"
+            app:borderWidth="0dp"
             app:fabSize="normal"/>
 
           <TextView

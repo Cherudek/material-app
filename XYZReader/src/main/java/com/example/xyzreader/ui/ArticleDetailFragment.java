@@ -12,6 +12,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.graphics.Palette;
 import android.text.Html;
@@ -141,7 +142,11 @@ public class ArticleDetailFragment extends Fragment implements
 
         mStatusBarColorDrawable = new ColorDrawable(0);
 
-        mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
+    FloatingActionButton fab = mRootView.findViewById(R.id.share_fab);
+
+    fab.setCompatElevation(12);
+
+    fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -280,7 +285,8 @@ public class ArticleDetailFragment extends Fragment implements
 
             }
             bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY).replaceAll("(\r\n|\n)", "<br />")));
-            ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
+
+          ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
                     .get(mCursor.getString(ArticleLoader.Query.PHOTO_URL), new ImageLoader.ImageListener() {
                         @Override
                         public void onResponse(ImageLoader.ImageContainer imageContainer, boolean b) {
