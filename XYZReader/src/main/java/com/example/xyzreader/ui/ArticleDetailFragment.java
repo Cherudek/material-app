@@ -11,7 +11,6 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.graphics.Palette;
@@ -188,20 +187,6 @@ public class ArticleDetailFragment extends Fragment implements
   }
 
 
-  @Override
-  public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-    super.onViewCreated(view, savedInstanceState);
-
-    Intent intent = getActivityCast().getIntent();
-
-    intent.getAction();
-
-    String fragmentTag = ArticleDetailFragment.TAG;
-
-    Fragment fragment = getFragmentManager().findFragmentByTag(fragmentTag);
-
-
-  }
 
     private void updateStatusBar() {
         int color = 0;
