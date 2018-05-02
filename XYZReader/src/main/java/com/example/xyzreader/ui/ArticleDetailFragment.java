@@ -39,16 +39,19 @@ import java.util.GregorianCalendar;
  */
 public class ArticleDetailFragment extends Fragment implements
         LoaderManager.LoaderCallbacks<Cursor> {
+
     private static final String TAG = "ArticleDetailFragment";
+  private static final String INTENT_TAG = "Share Message";
+  private static final int REQUEST_CODE = 0;
 
     public static final String ARG_ITEM_ID = "item_id";
     private static final float PARALLAX_FACTOR = 1.25f;
-  private static final int REQUEST_CODE = 0;
+  private Intent intent;
 
     private Cursor mCursor;
     private long mItemId;
     private View mRootView;
-  private int mMutedColor = R.color.primaryDarkColor;
+  private int mMutedColor;
     private ObservableScrollView mScrollView;
     private DrawInsetsFrameLayout mDrawInsetsFrameLayout;
     private ColorDrawable mStatusBarColorDrawable;
@@ -125,6 +128,8 @@ public class ArticleDetailFragment extends Fragment implements
             }
         });
 
+    mMutedColor = R.color.primaryDarkColor;
+
         mScrollView = (ObservableScrollView) mRootView.findViewById(R.id.scrollview);
         mScrollView.setCallbacks(new ObservableScrollView.Callbacks() {
             @Override
@@ -143,18 +148,16 @@ public class ArticleDetailFragment extends Fragment implements
 
     FloatingActionButton fab = mRootView.findViewById(R.id.share_fab);
 
-    fab.setCompatElevation(12);
-
     fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
               //Intent to Share our message
 
-              Intent intent = new Intent();
+              intent = new Intent();
               intent.setAction(Intent.ACTION_SEND);
               intent.setType("text/plain");
-              intent.putExtra(Intent.EXTRA_TEXT, "Some sample text");
+              intent.putExtra(INTENT_TAG, "Some sample text");
 
               startActivityForResult(intent, REQUEST_CODE);
 
@@ -169,21 +172,24 @@ public class ArticleDetailFragment extends Fragment implements
 
   @Override
   public void onActivityResult(int requestCode, int resultCode, Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
 
-    Log.i("SS", "onActivityResult: " + requestCode + ", " + resultCode + ", "
-        + (data != null ? data.toString() : "empty intent"));
+    data = intent;
 
-    if (requestCode == REQUEST_CODE) {
+    requestCode = REQUEST_CODE;
+
+    if (requestCode == resultCode) {
 
       //SnackBar to confirm the message has been sent!
       Snackbar.make(mRootView, "Message Shared", Snackbar.LENGTH_LONG)
           .setAction("Action", null).show();
     } else {
       //SnackBar to confirm the message has been sent!
-      Snackbar.make(mRootView, "Sorry Try Again Message Not Shared", Snackbar.LENGTH_LONG)
+      Snackbar.make(mRootView, "Message Not Shared", Snackbar.LENGTH_LONG)
           .setAction("Action", null).show();
     }
+
+    Log.i("SS", "onActivityResult: " + requestCode + ", " + resultCode + ", "
+        + (data != null ? data.toString() : "empty intent"));
   }
 
     private void updateStatusBar() {
@@ -276,6 +282,7 @@ public class ArticleDetailFragment extends Fragment implements
                             Bitmap bitmap = imageContainer.getBitmap();
                             if (bitmap != null) {
 
+                              //Picasso Library to Load the Image in the Detail Fragment ImageView.
                               Picasso.with(getActivityCast())
                                   .load(mCursor.getString(ArticleLoader.Query.PHOTO_URL))
                                   .placeholder(R.drawable.empty_detail)
@@ -313,20 +320,23 @@ public class ArticleDetailFragment extends Fragment implements
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
         if (!isAdded()) {
-            if (cursor != null) {
+
+          if (cursor != null) {
                 cursor.close();
             }
             return;
         }
 
         mCursor = cursor;
-        if (mCursor != null && !mCursor.moveToFirst()) {
-            Log.e(TAG, "Error reading item detail cursor");
-            mCursor.close();
-            mCursor = null;
+
+      if (mCursor != null && !mCursor.moveToFirst()) {
+//            Log.e(TAG, "Error reading item detail cursor");
+//            mCursor.close();
+//            mCursor = null;
+        return;
         }
 
-        bindViews();
+      bindViews();
     }
 
     @Override

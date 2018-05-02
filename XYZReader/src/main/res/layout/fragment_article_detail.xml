@@ -92,7 +92,6 @@
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/meta_bar"
             android:contentDescription="@string/action_share"
-            android:elevation="@dimen/fab_pressed_elevation"
             android:src="@drawable/ic_share"
             android:stateListAnimator="@animator/fab_state_list_anim"
             app:borderWidth="0dp"
