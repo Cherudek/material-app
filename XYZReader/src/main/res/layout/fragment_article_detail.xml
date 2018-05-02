@@ -109,7 +109,7 @@
             android:paddingBottom="@dimen/detail_body_bottom_margin"
             android:ellipsize="end"
             android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
-            android:maxLines="10"
+            android:maxLines="40"
             android:textColor="@color/primaryTextColor"
             android:textColorLink="@color/theme_accent"
             android:textSize="@dimen/detail_body_text_size"/>
